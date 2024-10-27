@@ -7,17 +7,21 @@
 
 ## Steps
 
-1. Enable cgroups. Steps [here](https://docs.k3s.io/installation/requirements?os=pi#cgroups)
+1. Enable cgroups. Steps [here](https://docs.k3s.io/installation/requirements?os=pi#cgroups).
 1. Install dependencies.
 
     ```bash
     apt install iptables
     ```
 
-1. Run install script. Steps [here](https://docs.k3s.io/quick-start#install-script)
+1. Run install script. Steps [here](https://docs.k3s.io/quick-start#install-script).
 
     ```bash
     curl -sfL https://get.k3s.io | sh -
     ```
 
-1. tbd
+1. Validate cluster ingress in iptables.
+
+    ```bash
+    iptables -t nat -L KUBE-NODEPORTS -n -v
+    ```
