@@ -38,4 +38,4 @@ spec:
       enabled: true
       apiGateway:
         managedGatewayClass:
-          serviceType: ClusterIP
+          serviceType: NodePort
