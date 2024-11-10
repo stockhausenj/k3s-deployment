@@ -1,0 +1,27 @@
+---
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: Gateway
+metadata:
+  name: api-gateway
+  namespace: consul-ingress
+spec:
+  gatewayClassName: consul
+  listeners:
+    - protocol: HTTP
+      port: 80
+      name: http
+      allowedRoutes:
+        namespaces:
+          from: "All"
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: api-gateway-hello-world
+  namespace: consul-ingress
+spec:
+  destination:
+    name: hello-world
+  sources:
+    - name: api-gateway
+      action: allow
