@@ -32,12 +32,10 @@ spec:
       name: consul
     server:
       replicas: 1
-    client:
-      enabled: true
     ui:
       enabled: true
     connectInject:
       enabled: true
       apiGateway:
         managedGatewayClass:
-        serviceType: ClusterIP
+          serviceType: ClusterIP
