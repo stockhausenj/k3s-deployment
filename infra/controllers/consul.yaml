@@ -27,6 +27,7 @@ spec:
   targetNamespace: consul
   install:
     createNamespace: true
+    crds: CreateReplace
   values:
     global:
       name: consul
