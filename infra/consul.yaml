@@ -39,4 +39,4 @@ spec:
       apiGateway:
         manageExternalCRDs: true
         managedGatewayClass:
-          serviceType: NodePort
+          serviceType: LoadBalancer
