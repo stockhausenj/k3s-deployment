@@ -38,5 +38,5 @@ spec:
       enabled: true
     connectInject:
       enabled: true
-    ingressGateways:
+    apiGateway:
       enabled: true
