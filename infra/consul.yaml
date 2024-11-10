@@ -24,6 +24,7 @@ spec:
         kind: HelmRepository
         name: hashicorp
         namespace: flux-system
+  targetNamespace: consul
   install:
     createNamespace: true
   values:
