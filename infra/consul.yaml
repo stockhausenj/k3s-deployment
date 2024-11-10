@@ -31,7 +31,7 @@ spec:
     global:
       name: consul
     server:
-      replicas: 3
+      replicas: 1
     client:
       enabled: true
     ui:
