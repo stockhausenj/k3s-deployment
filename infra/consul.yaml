@@ -19,7 +19,7 @@ spec:
   chart:
     spec:
       chart: consul
-      version: "1.1.*" # Specify the version or leave blank to use the latest
+      version: "1.6.*" # Specify the version or leave blank to use the latest
       sourceRef:
         kind: HelmRepository
         name: hashicorp
