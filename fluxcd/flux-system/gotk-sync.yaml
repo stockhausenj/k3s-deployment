@@ -55,3 +55,33 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: app-setups
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  dependsOn:
+    - name: infra-configs
+  path: ./app/setups
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: app-configs
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  dependsOn:
+    - name: app-setups
+  path: ./app/configs
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

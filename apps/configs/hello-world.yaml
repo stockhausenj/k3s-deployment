@@ -1,0 +1,82 @@
+---
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: ReferenceGrant
+metadata:
+  name: consul-reference-grant
+  namespace: hello-world
+spec:
+  from:
+    - group: gateway.networking.k8s.io
+      kind: HTTPRoute
+      namespace: consul-ingress
+  to:
+    - group: ""
+      kind: Service
+---
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: route-api
+  namespace: hello-world
+spec:
+  parentRefs:
+    - name: api-gateway
+      namespace: consul-ingress
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - kind: Service
+          name: hello-world
+          port: 5678
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceDefaults
+metadata:
+  name: hello-world
+  namespace: hello-world
+spec:
+  protocol: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+  namespace: hello-world
+  labels:
+    app: hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+      annotations:
+        "consul.hashicorp.com/connect-inject": "true"
+    spec:
+      containers:
+        - name: hello-world
+          image: hashicorp/http-echo:latest
+          args:
+            - "-text=Hello, World!"
+          ports:
+            - containerPort: 5678
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+  namespace: hello-world
+spec:
+  type: NodePort
+  ports:
+    - port: 5678
+      targetPort: 5678
+      nodePort: 30080
+  selector:
+    app: hello-world
