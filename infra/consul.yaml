@@ -38,5 +38,6 @@ spec:
       enabled: true
     connectInject:
       enabled: true
-    apiGateway:
-      enabled: true
+      apiGateway:
+        managedGatewayClass:
+        serviceType: ClusterI
