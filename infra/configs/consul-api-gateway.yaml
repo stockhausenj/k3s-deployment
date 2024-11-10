@@ -3,7 +3,7 @@ apiVersion: gateway.networking.k8s.io/v1beta1
 kind: Gateway
 metadata:
   name: api-gateway
-  namespace: consul-ingress
+  namespace: consul
 spec:
   gatewayClassName: consul
   listeners:
@@ -17,8 +17,8 @@ spec:
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceIntentions
 metadata:
-  name: api-gateway-hello-world
-  namespace: consul-ingress
+  name: hello-world
+  namespace: consul
 spec:
   destination:
     name: hello-world
