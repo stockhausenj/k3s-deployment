@@ -25,3 +25,5 @@
     ```bash
     iptables -t nat -L KUBE-NODEPORTS -n -v
     ```
+
+1. Bootstrap FluxCD. Steps [here](https://fluxcd.io/flux/installation/bootstrap/github/).
