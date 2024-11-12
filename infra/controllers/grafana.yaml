@@ -28,6 +28,7 @@ spec:
   install:
     crds: CreateReplace
   values:
+    adminPassword: admin
     podAnnotations:
       "consul.hashicorp.com/connect-inject": "true"
     persistence:
