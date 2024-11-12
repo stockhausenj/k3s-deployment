@@ -28,7 +28,7 @@ spec:
   install:
     crds: CreateReplace
   values:
-    annotations:
+    podAnnotations:
       "consul.hashicorp.com/connect-inject": "true"
     persistence:
       enabled: true
