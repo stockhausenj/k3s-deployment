@@ -28,6 +28,8 @@ spec:
   install:
     crds: CreateReplace
   values:
+    annotations:
+      "consul.hashicorp.com/connect-inject": "true"
     persistence:
       enabled: true
       type: pvc
