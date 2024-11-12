@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - consul.yaml
   - consul-api-gateway.yaml
+  - grafana.yaml
