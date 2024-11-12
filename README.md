@@ -4,6 +4,7 @@
 
 - Debian 12 bookworm (raspberry pi)
 - Raspberry Pi 5
+- 2 TiB external SSD
 
 ## Steps
 
