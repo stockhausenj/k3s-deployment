@@ -27,5 +27,13 @@
     ```
 
 1. Setup NFS for statefulsets.
+
+    ```bash
+    apt install nfs-kernel-server
+    mkdir /mnt/kube_pv
+    # mount external drive to /mnt/kube_pv
+    echo "/mnt/kube_pv 10.0.4.0/24(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports
+    ```
+
 1. Install gateway API CRDs. Steps [here](https://gateway-api.sigs.k8s.io/guides/#installing-gateway-api).
 1. Bootstrap FluxCD. Steps [here](https://fluxcd.io/flux/installation/bootstrap/github/).
