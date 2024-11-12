@@ -3,7 +3,6 @@ apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: ReferenceGrant
 metadata:
   name: consul-reference-grant
-  namespace: hello-world
 spec:
   from:
     - group: gateway.networking.k8s.io
@@ -17,7 +16,6 @@ apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
   name: route-api
-  namespace: hello-world
 spec:
   parentRefs:
     - name: api-gateway
@@ -36,7 +34,6 @@ apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceDefaults
 metadata:
   name: hello-world
-  namespace: hello-world
 spec:
   protocol: http
 ---
@@ -44,7 +41,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world
-  namespace: hello-world
   labels:
     app: hello-world
 spec:
@@ -71,7 +67,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-world
-  namespace: hello-world
 spec:
   type: NodePort
   ports:
