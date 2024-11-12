@@ -20,6 +20,8 @@ spec:
   parentRefs:
     - name: api-gateway
       namespace: consul-ingress
+  hostnames:
+    - helloworld
   rules:
     - matches:
         - path:
