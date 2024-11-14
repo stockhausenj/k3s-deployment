@@ -26,9 +26,16 @@ spec:
         namespace: flux-system
   targetNamespace: prometheus
   values:
+    alertmanager:
+      enabled: false
     podAnnotations:
       "consul.hashicorp.com/connect-inject": "true"
     server:
       persistentVolume:
         enabled: true
         existingClaim: prometheus-nfs
+    extraScrapeConfigs:
+      - job_name: 'pihole-exporter'
+        static_configs:
+          - targets:
+            - "10.0.4.136:9617"
