@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: prometheus-nfs
-  namespace: grafana
+  namespace: prometheus
 spec:
   capacity:
     storage: 200Gi
@@ -17,7 +17,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: prometheus-nfs
-  namespace: grafana
+  namespace: prometheus
 spec:
   accessModes:
     - ReadWriteOnce
