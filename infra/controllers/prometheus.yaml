@@ -40,3 +40,8 @@ spec:
         static_configs:
           - targets:
             - "10.0.4.136:9617"
+      - job_name: 'haproxy-node-exporters'
+        static_configs:
+          - targets:
+            - "10.0.4.136:9100"
+            - "10.0.4.137:9100"
