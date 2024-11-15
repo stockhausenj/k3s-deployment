@@ -31,6 +31,8 @@ spec:
     podAnnotations:
       "consul.hashicorp.com/connect-inject": "true"
     server:
+      podAnnotations:
+        "consul.hashicorp.com/connect-inject": "true"
       global:
         scrape_interval: 30s
       persistentVolume:
