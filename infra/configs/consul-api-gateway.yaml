@@ -34,7 +34,6 @@ metadata:
 spec:
   destination:
     name: grafana
-    namespace: grafana
   sources:
     - name: api-gateway
       action: allow
@@ -47,7 +46,6 @@ metadata:
 spec:
   destination:
     name: prometheus-server
-    namespace: prometheus
   sources:
     - name: api-gateway
       action: allow
