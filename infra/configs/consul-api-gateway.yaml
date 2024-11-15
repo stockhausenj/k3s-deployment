@@ -41,7 +41,7 @@ spec:
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceIntentions
 metadata:
-  name: prometheus
+  name: prometheus-server
   namespace: consul-ingress
 spec:
   destination:
