@@ -31,6 +31,8 @@ spec:
     podAnnotations:
       "consul.hashicorp.com/connect-inject": "true"
     server:
+      global:
+        scrape_interval: 30s
       persistentVolume:
         enabled: true
         existingClaim: prometheus-nfs
