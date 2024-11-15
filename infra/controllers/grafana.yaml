@@ -28,8 +28,6 @@ spec:
   install:
     crds: CreateReplace
   values:
-    image:
-      tag: 11.2.3
     podAnnotations:
       "consul.hashicorp.com/connect-inject": "true"
     persistence:
