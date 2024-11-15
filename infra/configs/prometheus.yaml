@@ -37,7 +37,7 @@ spec:
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceDefaults
 metadata:
-  name: prometheus
+  name: prometheus-server
   namespace: prometheus
 spec:
   protocol: http
