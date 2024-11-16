@@ -32,7 +32,7 @@ spec:
       "consul.hashicorp.com/connect-service-port": 9090
       "consul.hashicorp.com/connect-inject": true
     server:
-      replicaCount: 2
+      replicaCount: 1
       podAnnotations:
         "consul.hashicorp.com/connect-inject": "true"
       global:
