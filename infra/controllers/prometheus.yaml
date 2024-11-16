@@ -29,8 +29,8 @@ spec:
     alertmanager:
       enabled: false
     podAnnotations:
+      "consul.hashicorp.com/connect-service-port": "8080"
       "consul.hashicorp.com/connect-inject": "true"
-      "consul.hashicorp.com/connect-service-port": "9090"
     server:
       podAnnotations:
         "consul.hashicorp.com/connect-inject": "true"
