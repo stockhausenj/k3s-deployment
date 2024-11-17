@@ -57,7 +57,7 @@ spec:
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
     spec:
-      hostNetwork: true
+      hostNetwork: false
       nodeSelector:
         kubernetes.io/hostname: raspberrypiiiii
       containers:
