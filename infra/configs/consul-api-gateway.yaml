@@ -49,3 +49,15 @@ spec:
   sources:
     - name: api-gateway
       action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: home-assistant
+  namespace: consul-ingress
+spec:
+  destination:
+    name: home-assistant
+  sources:
+    - name: api-gateway
+      action: allow
