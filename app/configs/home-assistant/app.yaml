@@ -61,7 +61,7 @@ spec:
         - name: home-assitant
           image: ghcr.io/home-assistant/home-assistant:2024.11.2
           ports:
-            - containerPort: 5678
+            - containerPort: 8123
           volumeMounts:
             - mountPath: /config
               name: storage-volume
