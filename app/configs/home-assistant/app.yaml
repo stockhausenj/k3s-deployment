@@ -57,7 +57,7 @@ spec:
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
     spec:
-      hostNetwork: true
+      hostNetwork: false
       containers:
         - name: home-assitant
           image: ghcr.io/home-assistant/home-assistant:2024.11.2
