@@ -84,3 +84,17 @@ spec:
       protocol: TCP
   selector:
     app: home-assistant
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant-np
+spec:
+  type: NodePort
+  ports:
+    - port: 1900
+      targetPort: 1900
+      targetPort: 1900
+      protocol: TCP
+  selector:
+    app: home-assistant
