@@ -53,7 +53,7 @@ spec:
   template:
     metadata:
       labels:
-        app: home-assitant
+        app: home-assistant
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
     spec:
