@@ -59,7 +59,7 @@ spec:
         "consul.hashicorp.com/connect-service": "home-assistant"
         "consul.hashicorp.com/connect-service-port": "8123"
     spec:
-      hostNetwork: false
+      hostNetwork: true
       nodeSelector:
         kubernetes.io/hostname: raspberrypiiiii
       containers:
@@ -83,20 +83,6 @@ spec:
   type: ClusterIP
   ports:
     - port: 8123
-      protocol: TCP
-  selector:
-    app: home-assistant
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: home-assistant-np
-spec:
-  type: NodePort
-  ports:
-    - port: 1900
-      targetPort: 1900
-      nodePort: 1900
       protocol: TCP
   selector:
     app: home-assistant
