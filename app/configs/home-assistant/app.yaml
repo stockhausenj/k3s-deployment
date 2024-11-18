@@ -94,7 +94,7 @@ spec:
   ports:
     - port: 1900
       targetPort: 1900
-      targetPort: 1900
+      nodePort: 1900
       protocol: TCP
   selector:
     app: home-assistant
