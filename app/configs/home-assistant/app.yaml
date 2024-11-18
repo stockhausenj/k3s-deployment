@@ -56,6 +56,7 @@ spec:
         app: home-assistant
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
+        "consul.hashicorp.com/connect-service": "home-assistant"
         "consul.hashicorp.com/connect-service-port": "8123"
     spec:
       hostNetwork: false
