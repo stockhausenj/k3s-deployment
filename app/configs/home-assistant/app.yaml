@@ -59,7 +59,7 @@ spec:
         "consul.hashicorp.com/connect-service": "home-assistant"
         "consul.hashicorp.com/connect-service-port": "8123"
     spec:
-      hostNetwork: true
+      hostNetwork: false
       nodeSelector:
         kubernetes.io/hostname: raspberrypiiiii
       containers:
