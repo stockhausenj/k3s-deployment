@@ -60,8 +60,6 @@ spec:
         "consul.hashicorp.com/connect-service-port": "8123"
     spec:
       hostNetwork: false
-      nodeSelector:
-        kubernetes.io/hostname: raspberrypiiiii
       containers:
         - name: home-assitant
           image: ghcr.io/home-assistant/home-assistant:2024.11.2
