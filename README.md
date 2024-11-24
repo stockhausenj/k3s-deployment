@@ -30,6 +30,10 @@
 1. Setup NFS for statefulsets.
 
     ```bash
+    mkdir /mnt/kube_pv
+    mount /dev/sda1 /mnt/kube_pv
+    echo "UUID=ba180c1e-bb96-4137-91b4-437ca076e3b1 /mnt/kube_pv ext4 defaults 0 2" >> /etc/fstab
+    systemctl daemon-reload
     apt install nfs-kernel-server
     mkdir /mnt/kube_pv
     # mount external drive to /mnt/kube_pv
