@@ -28,13 +28,11 @@ spec:
   values:
     alertmanager:
       enabled: false
-    podAnnotations:
-      "consul.hashicorp.com/connect-service-port": "9090"
-      "consul.hashicorp.com/connect-service": "prometheus-server"
-      "consul.hashicorp.com/connect-inject": true
     server:
       replicaCount: 1
       podAnnotations:
+        "consul.hashicorp.com/connect-service-port": "9090"
+        "consul.hashicorp.com/connect-service": "prometheus-server"
         "consul.hashicorp.com/connect-inject": "true"
       global:
         scrape_interval: 30s
