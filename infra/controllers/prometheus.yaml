@@ -29,7 +29,7 @@ spec:
     alertmanager:
       enabled: false
     podAnnotations:
-      "consul.hashicorp.com/connect-service-port": 9090
+      "consul.hashicorp.com/connect-service-port": "9090"
       "consul.hashicorp.com/connect-service": "prometheus-server"
       "consul.hashicorp.com/connect-inject": true
     server:
