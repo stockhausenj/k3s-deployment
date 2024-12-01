@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - grafana.yaml
   - prometheus.yaml
-  - home-assistant.yaml
