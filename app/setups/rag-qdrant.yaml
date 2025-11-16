@@ -32,8 +32,6 @@ spec:
   targetNamespace: rag-qdrant
   values:
     replicaCount: 1
-    image:
-      tag: "latest"
     env:
       - name: QDRANT__STORAGE__PERFORMANCE__MAX_PAGE_SIZE_BYTES
         value: "16384"
