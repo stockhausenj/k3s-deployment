@@ -1,0 +1,56 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rag-weaviate
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: weaviate
+  namespace: flux-system
+spec:
+  url: https://weaviate.github.io/weaviate-helm
+  interval: 10m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: weaviate
+  namespace: flux-system
+spec:
+  interval: 5m
+  releaseName: weaviate
+  chart:
+    spec:
+      chart: weaviate
+      version: "17.7.0"
+      sourceRef:
+        kind: HelmRepository
+        name: weaviate
+        namespace: flux-system
+  targetNamespace: rag-weaviate
+  values:
+    replicas: 1
+    persistence:
+      enabled: false
+    resources:
+      requests:
+        memory: "2Gi"
+        cpu: "250m"
+      limits:
+        memory: "2Gi"
+    service:
+      type: ClusterIP
+      port: 80
+    grpcService:
+      enabled: true
+      type: ClusterIP
+      port: 50051
+    env:
+      CLUSTER_HOSTNAME: "weaviate"
+      PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
+      QUERY_DEFAULTS_LIMIT: "25"
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      DEFAULT_VECTORIZER_MODULE: "none"
+      ENABLE_MODULES: "text2vec-transformers"
