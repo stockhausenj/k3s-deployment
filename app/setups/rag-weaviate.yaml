@@ -31,9 +31,12 @@ spec:
         namespace: flux-system
   targetNamespace: rag-weaviate
   values:
-    replicas: 1
+    replicas: 3
+    statefulSet:
+      podManagementPolicy: OrderedReady
     persistence:
-      enabled: false
+      enabled: true
+      size: 10Gi
     resources:
       requests:
         memory: "2Gi"
@@ -48,10 +51,9 @@ spec:
       type: ClusterIP
       port: 50051
     env:
-      CLUSTER_HOSTNAME: "weaviate"
       PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
       QUERY_DEFAULTS_LIMIT: "25"
       AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
       DEFAULT_VECTORIZER_MODULE: "none"
-      RAFT_BOOTSTRAP_EXPECT: "1"
-      RAFT_JOIN: "weaviate-0"
+      RAFT_BOOTSTRAP_EXPECT: "3"
+      RAFT_ENABLE_FQDN_RESOLVER: "true"

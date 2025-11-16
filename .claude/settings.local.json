@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:github.com)",
       "WebSearch",
-      "WebFetch(domain:weaviate.io)"
+      "WebFetch(domain:weaviate.io)",
+      "WebFetch(domain:docs.weaviate.io)"
     ],
     "deny": [],
     "ask": []
