@@ -34,6 +34,9 @@ spec:
     replicaCount: 1
     image:
       tag: "v1.15.5" # Latest stable Qdrant version
+    env:
+      - name: QDRANT__STORAGE__PERFORMANCE__MAX_PAGE_SIZE_BYTES
+        value: "16384"
     persistence:
       enabled: false
     resources:
