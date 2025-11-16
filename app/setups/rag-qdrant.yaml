@@ -33,9 +33,10 @@ spec:
   values:
     replicaCount: 1
     image:
-      repository: qdrant/qdrant
-      tag: "v1.15.5-unprivileged"
-      pullPolicy: IfNotPresent
+      tag: "latest"
+    env:
+      - name: QDRANT__STORAGE__PERFORMANCE__MAX_PAGE_SIZE_BYTES
+        value: "16384"
     persistence:
       enabled: false
     resources:
