@@ -19,7 +19,7 @@ spec:
   chart:
     spec:
       chart: prometheus
-      version: "25.30.0" # Set the desired version
+      version: "27.45.*" # Set the desired version
       sourceRef:
         kind: HelmRepository
         name: prometheus
