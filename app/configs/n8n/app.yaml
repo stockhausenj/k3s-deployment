@@ -80,6 +80,8 @@ spec:
               value: "http://n8n:5678/"
             - name: GENERIC_TIMEZONE
               value: "America/New_York"
+            - name: N8N_SECURE_COOKIE
+              value: "false"
           volumeMounts:
             - name: n8n-data
               mountPath: /home/node/.n8n
