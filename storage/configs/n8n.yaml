@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: n8n-nfs
+  namespace: n8n
+spec:
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    path: /mnt/kube_pv/n8n
+    server: 192.168.0.111
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: n8n-nfs
+  namespace: n8n
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 50Gi
+  volumeName: n8n-nfs
