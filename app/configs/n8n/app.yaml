@@ -73,11 +73,11 @@ spec:
             - name: N8N_HOST
               value: "n8n"
             - name: N8N_PORT
-              value: "5678"
+              value: "80"
             - name: N8N_PROTOCOL
               value: "http"
             - name: WEBHOOK_URL
-              value: "http://n8n:5678/"
+              value: "http://n8n/"
             - name: GENERIC_TIMEZONE
               value: "America/New_York"
             - name: N8N_SECURE_COOKIE
